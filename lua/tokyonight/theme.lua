@@ -38,7 +38,7 @@ function M.setup(config)
     SignColumn = { bg = config.transparent and c.none or c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
     SignColumnSB = { bg = c.bg_sidebar, fg = c.fg_gutter }, -- column where |signs| are displayed
     Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
-    LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr = { fg = 'grey' }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.dark5 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.orange, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.fg_dark, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -64,11 +64,11 @@ function M.setup(config)
     SpellCap = { sp = c.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal = { sp = c.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare = { sp = c.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    StatusLine = { fg = c.fg_sidebar, bg = c.bg_statusline }, -- status line of current window
-    StatusLineNC = { fg = c.fg_gutter, bg = c.bg_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine = { bg = c.bg_statusline, fg = c.fg_gutter }, -- tab pages line, not active tab page label
-    TabLineFill = { bg = c.black }, -- tab pages line, where there are no labels
-    TabLineSel = { fg = c.black, bg = c.blue }, -- tab pages line, active tab page label
+    StatusLine = { fg = '#04262E', bg = '#c5c8c6'}, -- status line of current window
+    StatusLineNC = {  fg = '#04262E', bg = '#c5c8c6'}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine = { bg = '#04262E', fg = '#c5c8c6'}, -- tab pages line, not active tab page label
+    TabLineFill = { bg = '#04262E'}, -- tab pages line, where there are no labels
+    TabLineSel = { fg ='#04262E', bg = '#c5c8c6'}, -- tab pages line, active tab page label
     Title = { fg = c.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
     Visual = { bg = c.bg_visual }, -- Visual mode selection
     VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -383,6 +383,7 @@ function M.setup(config)
     BufferCurrentSign = { bg = c.fg_gutter, fg = c.info },
     BufferCurrentTarget = { bg = c.fg_gutter, fg = c.red },
     BufferVisible = { bg = c.bg_statusline, fg = c.fg },
+    
     BufferVisibleIndex = { bg = c.bg_statusline, fg = c.info },
     BufferVisibleMod = { bg = c.bg_statusline, fg = c.warning },
     BufferVisibleSign = { bg = c.bg_statusline, fg = c.info },
